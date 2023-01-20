@@ -3,15 +3,16 @@ import ReactDOM from "react-dom/client";
 import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import "./index.css";
 import Admin from "./components/pages/admin/Admin.jsx";
+import Home from "./components/pages/home/Home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Admin />,
+    element: <Home />,
   },
   {
     path: "/admin",
-    element: <div>Admin!</div>,
+    element: <Admin />,
   },
   {
     path: "/user",
