@@ -2,14 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import "./index.css";
+import Admin from "./components/pages/admin/Admin.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>
-        Hello world!
-        <Link to={"/admin"}>Admin</Link>
-    </div>,
+    element: <Admin />,
   },
   {
     path: "/admin",
