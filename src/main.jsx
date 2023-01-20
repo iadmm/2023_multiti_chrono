@@ -4,6 +4,7 @@ import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import "./index.css";
 import Admin from "./components/pages/admin/Admin.jsx";
 import Home from "./components/pages/home/Home.jsx";
+import Player from "./components/pages/player/Player";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/player",
-    element: <div>Player!</div>,
+    element: < Player />
   },
 ]);
 
