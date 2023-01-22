@@ -1,0 +1,30 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin margin-class($prefix, $sizes, $property) {
+  @each $key, $value in $sizes{
+    .#{$prefix}-#{$key} {
+      #{$property}: $value;
+    }
+  }
+}
+
+$sizes: (
+  'none' : 0,
+  '2xs' : 0,
+  'xs' : 0,
+  'sm' : 0,
+  'md' : 0,
+  'lg' : 0,
+  'xl' : 0,
+  '2xl' : 0,
+);
+
+$properties : 'margin', 'padding';
+$sides : '', '-top', '-right', '-bottom', '-left';
+
+@each $property in $properties{
+  @each $side in $sides {
+    @include margin-class("u-#{$property}#{$side}", $sizes, "#{$property}#{$side}");
+  }
+}
