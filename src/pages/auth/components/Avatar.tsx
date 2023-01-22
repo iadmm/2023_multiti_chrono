@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient";
+import { supabase } from "../supabaseClient.js";
+import { Profile } from "../useAccount";
 
-function Avatar({ url, size, onUpload }) {
-  const [avatarUrl, setAvatarUrl] = useState(null);
+interface AvataProps {
+  profile: Profile;
+  size: number;
+  onUpload: (url: string) => void;
+}
+
+function Avatar({ profile, size, onUpload }: AvataProps) {
+  const { avatar_url: url } = profile;
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     if (url) downloadImage(url);
   }, [url]);
 
-  const downloadImage = async (path) => {
+  const downloadImage = async (path: string) => {
     try {
       const { data, error } = await supabase.storage
         .from("avatars")
@@ -24,7 +32,7 @@ function Avatar({ url, size, onUpload }) {
     }
   };
 
-  const uploadAvatar = async (event) => {
+  const uploadAvatar = async (event: any) => {
     try {
       setUploading(true);
 
@@ -44,7 +52,7 @@ function Avatar({ url, size, onUpload }) {
       if (uploadError) {
         throw uploadError;
       }
-      console.log({filePath});
+      setAvatarUrl(filePath);
       onUpload(filePath);
     } catch (error) {
       alert(error.message);
@@ -54,7 +62,7 @@ function Avatar({ url, size, onUpload }) {
   };
 
   return (
-    <div style={{ width: size }} aria-live="polite">
+    <div style={{ width: `${size}px` }} aria-live="polite">
       <img
         src={avatarUrl ? avatarUrl : `https://place-hold.it/${size}x${size}`}
         alt={avatarUrl ? "Avatar" : "No image"}

@@ -1,18 +1,18 @@
-@import "mixins/_mixins-breakpoints.scss";
+@import "mixins/mixins-breakpoints";
 
-@import "base/_base-margins.scss";
-@import "base/_base-html.scss";
-@import "base/_base-body.scss";
-@import "base/_base-root.scss";
+@import "base/base-margins";
+@import "base/base-html";
+@import "base/base-body";
+@import "base/base-root";
 
-@import "objects/_objects-listbare.scss";
-@import "objects/_objects-fluidimage.scss";
-@import "objects/_objects-fluidvideo.scss";
+@import "objects/objects-listbare";
+@import "objects/objects-fluidimage";
+@import "objects/objects-fluidvideo";
 
 
-@import "layout/_layout-container.scss";
-@import "layout/_layout-grid.scss";
+@import "layout/layout-container";
+@import "layout/layout-grid";
 
-@import "components/_components-test.scss";
+@import "components/components-test";
 
-@import "utilities/_utilities-spacings.scss";
+@import "utilities/utilities-spacings";
