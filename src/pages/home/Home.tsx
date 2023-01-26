@@ -18,7 +18,7 @@ const Home = () => {
       <h1 className="u-margin-bottom-none">Multiti Jam</h1>
       <h2>2023</h2>
       <p>Creation de projets en 48h</p>
-      <Link to={"/login"}>Login</Link>
+      <Link to={"/player"}>Player</Link>
     </div>
   );
 };
