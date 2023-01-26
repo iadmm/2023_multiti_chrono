@@ -1,101 +1,60 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useState } from "react";
+import SlideDisplay from "./components/SlideDisplay.jsx";
+import FinalCountdown from "./components/FinalCoutdown.jsx";
 import Countdown from "react-countdown";
-import ReactPlayer from "react-player";
-import * as Console from "console";
+import Renderer from "./components/Renderer.jsx";
 
 let currentTime = new Date();
-let startTime = new Date('2023-01-27T20:00:00');
-let endTime = new Date('2023-01-29T18:00:00');
+let startTime = new Date("2023-01-27T20:00:00");
+let endTime = new Date("2023-01-29T18:00:00");
 
 const Player = () => {
-    return (
-        <div className="l-container">
-            <div className="c-pagesection">
-                <div className="c-player">
-                    <SlideDisplay/>
-                    <h1>
-                        <Countdown
-                            daysInHours={true}
-                            zeroPadTime={2}
-                            date={endTime}
-                            renderer={Renderer}
-                        /></h1>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-let slideUrl;
-
-const SlidePicker = () => {
-    switch (slideInput.type) {
-        case "video" :
-            slideUrl = slideInput.url + '.mp4'
-            break;
-        case "image" :
-            slideUrl = slideInput.url + '.png'
-            break;
-        case "gif" :
-            slideUrl = slideInput.url + '.gif'
-            break;
-        default :
-            console.log("format error")
-    }
-}
-
-const SlideDisplay = () => <div className="c-slide_display"><ImagePlayer/></div>;
-
-const VideoPlayer = () => <ReactPlayer url='https://youtube.com/shorts/hx3mskrUHlY?feature=share' width="100%" height="100%"/>
-const ImagePlayer = () => {
-    const [format, setFormat] = useState(null)
-    const inputEl = useRef(null);
-    let imgUrl ="https://cdn.fbsbx.com/v/t59.2708-21/277118244_959883808062901_1854334059177509334_n.gif?_nc_cat=103&ccb=1-7&_nc_sid=041f46&_nc_ohc=4o-UcV7W5FsAX-d84NG&_nc_ht=cdn.fbsbx.com&oh=03_AdT4Lewv5J5iWuxf-IdGllVFSDW2mTg-3dtVWan1vl2gdg&oe=63D423AB"
-    useEffect(()=> {
-        const img = inputEl.current;
-        const onImageLoad = ()=>{
-            // console.log(img.clientWidth,img.clientHeight)
-            if (img.clientWidth < img.clientHeight){
-                console.log("c'est vertical maggle")
-                setFormat('vertical')
-            }
-            else if(img.clientWidth > img.clientHeight){
-                console.log("c'est horizontal maggle")
-                setFormat('horizontal')
-            }
-            else {
-                console.log("c'est une image parfaitement carrée, bravo")
-                setFormat('square')
-            }
-        };
-        img.addEventListener('load', onImageLoad);
-        return ()=> {
-            img.removeEventListener('load', onImageLoad)
+  const [hasInteracted, setInteraction] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(null);
+  if (!hasInteracted) {
+    return <button onClick={() => setInteraction(true)}>Unmute</button>;
+  }
+  return (
+    <div className="l-container">
+      <button
+        onClick={() =>
+          setCurrentSlide({
+            title: "coucou la vid",
+              type:"video",
+            value: "https://www.youtube.com/watch?v=QBBLxrvOmqw",
+          })
         }
-    });
-    return <img ref={inputEl} className={`o-fluidimage c-player__image c-player_image--${format}`} src={imgUrl} alt=""/>
+      >
+        Play video
+      </button>
+      <button
+        onClick={() =>
+          setCurrentSlide({
+            title: "coucou l'image",
+              type:"image",
+            value: "https://www.voxygen.fr/fr/img/portraits/grid-c-2.jpg",
+          })
+        }
+      >
+        Play image
+      </button>
 
-
-}
-
-// Random component
-const Completion = () => <span>Jam Is Over ! Congrats</span>;
-const NotStarted = () => <span>La Jam n'a pas encore commencée.</span>;
-
-// Renderer callback with condition
-const Renderer = ({days, hours, minutes, seconds, completed}) => {
-    if (completed) {
-        // Render a completed state
-        return <Completion/>;
-    }
-        else if(currentTime < startTime){
-            return <NotStarted/>
-    }
-    else {
-        // Render a countdown
-        return <span>{days} jours {hours}h : {minutes}m : {seconds}s</span>;
-    }
+      <div className="c-pagesection">
+        <div className="c-player">
+          {currentSlide && <SlideDisplay slide={currentSlide} />}
+          <FinalCountdown />
+          <h1 className="c-timer_title">
+            <Countdown
+              daysInHours={true}
+              zeroPadTime={2}
+              date={endTime}
+              renderer={Renderer}
+            />
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
 };
-
 
 export default Player;

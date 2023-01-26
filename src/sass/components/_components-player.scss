@@ -10,13 +10,22 @@
   display: flex;
   margin: 0 auto;
   border-radius: 30px;
-  height: 700px;
+  height: 770px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(125deg, #380F64, #360037);
   overflow: hidden;
 
   align-items: center;
 }
+
+.c-timer_title{
+  font-family: "Comic Sans MS";
+  font-size: calc(64/16*1rem);
+  color: #FEA298;
+  text-shadow: 5px 5px #701543 ;
+}
+
+
 
 .c-player__image {
   align-items: center;
