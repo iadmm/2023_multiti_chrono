@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./src/pages/home/Home";
 import Login from "./src/pages/login/Login";
+import Player from "./src/pages/player/Player"
 import ErrorPage from "./src/pages/error/ErrorPage";
 import Account from "./src/pages/auth/Account";
 import { getProfile, loadSession } from "./src/lib/loaders";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
+      {
+        path: "player",
+        element: <Player />,
+      }
     ],
   },
   {
