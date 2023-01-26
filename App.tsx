@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./src/pages/home/Home";
 import Login from "./src/pages/login/Login";
+import User from "./src/pages/user/User";
 import Player from "./src/pages/player/Player"
 import ErrorPage from "./src/pages/error/ErrorPage";
 import Account from "./src/pages/auth/Account";
@@ -18,7 +19,6 @@ import VroumAdmin from "./src/pages/vroum/vroumAdmin";
 const Root = () => {
   return (
     <div>
-      <h1>Multiti Jam 2023</h1>
       <div>
         <Outlet />
       </div>
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "player",
         element: <Player />,
+      },
+      {
+        path: "user",
+        element: <User />,
       }
     ],
   },
