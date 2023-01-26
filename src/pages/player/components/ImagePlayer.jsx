@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const ImagePlayer = ({slide}) => {
+const ImagePlayer = ({slide, goToNextSlide}) => {
     const [format, setFormat] = useState(null)
     const inputEl = useRef(null);
     let imgUrl = slide.value
@@ -23,6 +23,12 @@ const ImagePlayer = ({slide}) => {
             img.removeEventListener('load', onImageLoad)
         }
     });
+    useEffect(()=>{
+        const interval = setInterval(goToNextSlide, 5000);
+        return ()=>{
+            clearInterval(interval);
+        }
+    },[])
     return <img ref={inputEl} className={`o-fluidimage c-player__image c-player_image--${format}`} src={imgUrl} alt=""/>
 }
 

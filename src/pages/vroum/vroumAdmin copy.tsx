@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './data/data.js';
+import List from '../../../data/data.js';
 
 //react sortable
 //sortable js
