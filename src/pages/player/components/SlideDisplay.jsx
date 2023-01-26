@@ -2,36 +2,19 @@ import React from "react";
 import VideoPlayer from "./VideoPlayer.jsx";
 import ImagePlayer from "./ImagePlayer.jsx";
 
-let slideUrl;
-const SlidePicker = () => {
-    switch (slideInput.type) {
-        case "video" :
-            slideUrl = slideInput.url + '.mp4'
-            break;
-        case "image" :
-            slideUrl = slideInput.url + '.png'
-            break;
-        case "gif" :
-            slideUrl = slideInput.url + '.gif'
-            break;
-        default :
-            console.log("format error")
+const SlideDisplay = ({slide, goToNextSlide}) =>{
+    if (!slide){
+        return <div>Prout il n'y a rien</div>
     }
-}
-
-const SlideDisplay = ({slide}) =>{
     if (slide.type == "video"){
         return <div className="c-slide_display">
-            <VideoPlayer slide={slide}/>
+            <VideoPlayer slide={slide} goToNextSlide={goToNextSlide}/>
         </div>;
     }
     return <div className="c-slide_display">
-        <ImagePlayer slide={slide} />
+        <ImagePlayer slide={slide} goToNextSlide={goToNextSlide} />
     </div>;
 
 }
-
-
-
 
 export default SlideDisplay

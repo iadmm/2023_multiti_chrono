@@ -1,25 +1,45 @@
-import WaitingListItem from "./WaitingListItem";
+// import WaitingListItem from "./WaitingListItem";
+// import React, {Component} from 'react';
+// import {render} from 'react-dom';
+// import {
+//   SortableContainer,
+//   SortableElement,
+//   SortableHandle,
+// } from 'react-sortable-hoc';
+// import arrayMove from 'array-move';
+//
+//
+// interface SlideItem {
+//   title: string;
+//   value: string;
+//   _id: string;
+// }
+//
+// interface WaitingListProps {
+//   items: SlideItem[];
+// }
+//
+//
+// const WaitingList = SortableContainer(({items}:WaitingListProps) => {
+//   return <ul className="c-waiting-list o-list-bare" >
+//     {items.map((item) => (
+//       <div className="hello" key={item._id}>
+//         {item.title}
+//       </div>
+//     ))}
+//   </ul>;
+// });
+//
+// export default WaitingList;
 
-interface SlideItem {
-  title: string;
-  value: string;
-  _id: string;
-}
+import React from 'react';
 
-interface WaitingListProps {
-  items: SlideItem[];
-}
-
-const WaitingList = ({ items }:WaitingListProps) => (
-  <ul className="c-waiting-list o-list-bare">
-    {items.map((item) => (
-      <WaitingListItem
-        key={item._id}
-        title={item.title}
-        url={item.value}
-      />
-    ))}
-  </ul>
-);
+const WaitingList = () => {
+  return (
+      <div>
+        
+      </div>
+  );
+};
 
 export default WaitingList;

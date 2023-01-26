@@ -1,6 +1,6 @@
 import React from 'react';
 import WaitingList from './components/WaitingList';
-import items from "./data/data.json";
+import items from "../../../data/data.json";
 
 
 //react sortable

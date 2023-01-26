@@ -1,11 +1,17 @@
 import {useEffect, useState} from "react";
+import {differenceInHours} from "date-fns";
+
+
+
+
 const synth = window.speechSynthesis;
 let voices = [];
 voices = synth.getVoices();
-const voice = voices.find((voice) => voice.lang === "fr-FR");
+const voice = voices.find((voice) => voice.lang === "fr-FR" && voice.name === "Microsoft Paul - French (France)");
+
 console.log(voices)
 
-const FinalCountdown = () => {
+const FinalCountdown = ({startTime, endTime}) => {
     const [lastHour, setLastHour] = useState(new Date().getHours());
     useEffect(() => {
         setInterval(callback, 1000)
@@ -16,7 +22,7 @@ const FinalCountdown = () => {
             // if(lastHour < nowHour){
 
             if (nowHour < lastHour) {
-                let value = `Il reste ${endTime.getHours() - currentTime.getHours()} heure`;
+                let value = `Il reste ${differenceInHours(endTime, startTime)} heure`;
                 const speakUp = new SpeechSynthesisUtterance(value)
                 speakUp.voice = voice;
                 speakUp.pitch = 4;
