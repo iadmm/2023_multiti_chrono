@@ -14,6 +14,7 @@ import ErrorPage from "./src/pages/error/ErrorPage";
 import Account from "./src/pages/auth/Account";
 import { getProfile, loadSession } from "./src/lib/loaders";
 import Admin from "./src/pages/admin/Admin";
+import VroumAdmin from "./src/pages/vroum/vroumAdmin";
 
 const Root = () => {
   return (
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />
+      },
+      {
+        path: "/vroum",
+        element: <VroumAdmin />
       },
     ],
   },
