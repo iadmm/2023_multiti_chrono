@@ -8,11 +8,11 @@ import {
 } from "react-router-dom";
 import Home from "./src/pages/home/Home";
 import Login from "./src/pages/login/Login";
+import Player from "./src/pages/player/Player"
 import ErrorPage from "./src/pages/error/ErrorPage";
 import Account from "./src/pages/auth/Account";
 import { getProfile, loadSession } from "./src/lib/loaders";
 import Admin from "./src/pages/admin/Admin";
-import VroumAdmin from "./src/pages/vroum/vroumAdmin";
 
 const Root = () => {
   return (
@@ -42,9 +42,9 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "vroum",
-        element: <VroumAdmin />,
-      },
+        path: "player",
+        element: <Player />,
+      }
     ],
   },
   {
