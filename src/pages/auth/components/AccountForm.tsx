@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-import useAccount, { Profile } from "../useAccount";
+import {Profile} from "../Account";
+
 
 interface AccountFormProps {
   profile: Profile;

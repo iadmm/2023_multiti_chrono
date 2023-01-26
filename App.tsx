@@ -9,9 +9,9 @@ import {
 import Home from "./src/pages/home/Home";
 import Login from "./src/pages/login/Login";
 import ErrorPage from "./src/pages/error/ErrorPage";
-import { supabase } from "./src/pages/auth/supabaseClient";
 import Account from "./src/pages/auth/Account";
 import { getProfile, loadSession } from "./src/lib/loaders";
+import Admin from "./src/pages/admin/Admin";
 
 const Root = () => {
   return (
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/account",
+    id: "auth",
     loader: async () => {
       const { session } = await loadSession();
       if (!session) {
@@ -51,9 +51,17 @@ const router = createBrowserRouter([
       }
       return { session, profile: await getProfile(session) };
     },
-    element: <Account />,
+    children: [
+      {
+        path: "/account",
+        element: <Account />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />
+      },
+    ],
   },
-    
 ]);
 
 function App() {

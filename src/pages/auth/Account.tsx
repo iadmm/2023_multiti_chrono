@@ -1,13 +1,27 @@
 import React from "react";
 import { supabase } from "./supabaseClient";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import {
+  useLoaderData,
+  useNavigate,
+  useRouteLoaderData,
+} from "react-router-dom";
 import AccountForm from "./components/AccountForm";
 import Avatar from "./components/Avatar";
 import { updateProfile } from "../../lib/loaders";
 
+export interface ProfileForm {
+  username: string;
+  full_name: string;
+}
+export interface AvatarForm {
+  avatar_url: string;
+}
+export type ProfilePayload = AvatarForm | ProfileForm;
+export type Profile = AvatarForm & ProfileForm;
+
 const Account = () => {
   const navigate = useNavigate();
-  const { profile, session } = useLoaderData() as any;
+  const { profile, session } = useRouteLoaderData("auth") as any;
   const signout = () => {
     supabase.auth.signOut();
     navigate("/");
