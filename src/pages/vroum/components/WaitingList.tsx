@@ -1,4 +1,13 @@
 import WaitingListItem from "./WaitingListItem";
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import {
+  SortableContainer,
+  SortableElement,
+  SortableHandle,
+} from 'react-sortable-hoc';
+import arrayMove from 'array-move';
+
 
 interface SlideItem {
   title: string;
@@ -10,16 +19,15 @@ interface WaitingListProps {
   items: SlideItem[];
 }
 
-const WaitingList = ({ items }:WaitingListProps) => (
-  <ul className="c-waiting-list o-list-bare">
+
+const WaitingList = SortableContainer(({items}:WaitingListProps) => {
+  return <ul className="c-waiting-list o-list-bare" >
     {items.map((item) => (
-      <WaitingListItem
-        key={item._id}
-        title={item.title}
-        url={item.value}
-      />
-    ))}
-  </ul>
-);
+      <div className="hello" key={item._id}>
+        {item.title}
+      </div>
+    ))}  
+  </ul>;
+});
 
 export default WaitingList;
