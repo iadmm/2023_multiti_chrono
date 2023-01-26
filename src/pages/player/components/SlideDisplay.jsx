@@ -2,38 +2,35 @@ import React from "react";
 import VideoPlayer from "./VideoPlayer.jsx";
 import ImagePlayer from "./ImagePlayer.jsx";
 
-const defaultSlides = [{
-    value: "https://www.youtube.com/watch?v=HpiE45VVlf8",
-    title: "fireplace"
-},
+const defaultSlides = [
     {
-    value: "https://www.youtube.com/watch?v=G1IbRujko-A&t=110s",
-    title: "fireplace"
-},
+        value: "https://www.youtube.com/watch?v=G1IbRujko-A&t=110s",
+        title: "fireplace"
+    },
     {
-    value: "https://www.youtube.com/watch?v=ggDbDRUauzo&t=1s",
-    title: "duck"
-},
+        value: "https://www.youtube.com/watch?v=ggDbDRUauzo&t=1s",
+        title: "duck"
+    },
     {
-    value: "https://www.youtube.com/watch?v=t6isux5XWH0",
-    title: "rat"
-},
+        value: "https://www.youtube.com/watch?v=t6isux5XWH0",
+        title: "rat"
+    },
     {
-    value: "https://www.youtube.com/watch?v=hCC6ZhRS7sY",
-    title: "cowboy"
-},
+        value: "https://www.youtube.com/watch?v=hCC6ZhRS7sY",
+        title: "cowboy"
+    },
     {
-    value: "https://www.youtube.com/watch?v=hCC6ZhRS7sY",
-    title: "cowboy"
-},
+        value: "https://www.youtube.com/watch?v=hCC6ZhRS7sY",
+        title: "cowboy"
+    },
     {
-    value: "https://www.youtube.com/watch?v=L_6Q28__BCI&t=2s",
-    title: "boom"
-},
+        value: "https://www.youtube.com/watch?v=L_6Q28__BCI&t=2s",
+        title: "boom"
+    },
     {
-    value: "https://www.youtube.com/watch?v=CEXAvpACHf0",
-    title: "hello there"
-},
+        value: "https://www.youtube.com/watch?v=CEXAvpACHf0",
+        title: "hello there"
+    },
 
 ];
 
