@@ -5,8 +5,26 @@
     gap: 24px;
 
     @include breakpoint(medium){
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
+}
+
+.c-admin__video-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.c-admin__url{
+    width: 100%;
+}
+
+.c-admin__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .c-admin__list-section{
@@ -14,4 +32,8 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
+}
+
+.c-admin__list-title{
+    margin: 0;
 }

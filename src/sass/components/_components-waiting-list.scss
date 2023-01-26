@@ -1,8 +1,16 @@
+.c-waiting-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
 .c-waiting-list__item{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
+    width: 100%;
 
     background-color: #fff;
     border-radius: 10px;
