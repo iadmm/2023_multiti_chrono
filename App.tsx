@@ -19,7 +19,6 @@ import VroumAdmin from "./src/pages/vroum/vroumAdmin";
 const Root = () => {
   return (
     <div>
-      <h1>Multiti Jam 2023</h1>
       <div>
         <Outlet />
       </div>
