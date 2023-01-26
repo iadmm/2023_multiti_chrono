@@ -1,0 +1,28 @@
+/* ---------------------------------
+=page section
+--------------------------------- */
+
+.c-pagesection {
+    padding-top: calc(48 / 16 * 1rem);
+    padding-bottom: calc(48 / 16 * 1rem);
+
+    @include breakpoint(medium) {
+        padding-top: calc(72 / 16 * 1rem);
+        padding-bottom: calc(72 / 16 * 1rem);
+    }
+
+    @include breakpoint(large) {
+        padding-top: calc(120 / 16 * 1rem);
+        padding-bottom: calc(120 / 16 * 1rem);
+    }
+}
+  
+.c-pagesection--notop {
+    padding-top: 0;
+}
+
+.c-pagesection--nobottom {
+    padding-bottom: 0;
+}
+
+  

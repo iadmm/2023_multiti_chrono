@@ -1,0 +1,28 @@
+.c-waiting-list__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    
+    padding: calc(12/16*1rem) calc(36/16*1rem);
+}
+
+.c-waiting-list__title{
+    margin: 0;
+}
+
+.c-waiting-list__btn{
+    font-size: calc(24/16*1rem);
+    line-height: 1;
+    
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #EE469C;
+}
