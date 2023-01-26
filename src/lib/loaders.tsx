@@ -1,6 +1,6 @@
 import { Session } from "@supabase/gotrue-js";
 import { supabase } from "../pages/auth/supabaseClient";
-import { ProfilePayload } from "../pages/auth/useAccount";
+
 
 export const loadSession = () => {
   return supabase.auth
@@ -30,7 +30,7 @@ export const getProfile = async (session: Session) => {
 
 export const updateProfile = async (
   session: Session,
-  updates: ProfilePayload
+  updates: any
 ) => {
   try {
     const { user } = session;
