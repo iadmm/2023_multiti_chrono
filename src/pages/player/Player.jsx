@@ -39,7 +39,7 @@ const Player = () => {
       <div className="c-pagesection">
         <div className="c-player">
           <SlideDisplay goToNextSlide={goToNextSlide} slide={currentSlide} />
-          <FinalCountdown />
+          <FinalCountdown startTime={startTime} endTime={endTime}/>
           <h1 className="c-timer_title">
             <Countdown
               daysInHours={true}
