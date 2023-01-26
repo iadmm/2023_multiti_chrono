@@ -36,6 +36,7 @@ const defaultSlides = [
 
 const SlideDisplay = ({slide, goToNextSlide}) => {
     if (!slide) {
+        console.log()
         const fakeSlideIndex = Math.floor(Math.random() * defaultSlides.length);
         console.log({fakeSlideIndex})
         const fakeSlide = defaultSlides[fakeSlideIndex];
