@@ -8,9 +8,9 @@ interface SlideProps {
 export function Slide(props: SlideProps) {
   return (
     <div className="py-2 px-4 rounded-md bg-slate-800 flex items-start gap-2 relative">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 w-8 h-8">
         {props.slide.image && (
-          <img src={props.slide.image.url} className="aspect-square w-30" />
+          <img src={props.slide.image.url} className="aspect-square w-8" />
         )}
       </div>
       <div>
