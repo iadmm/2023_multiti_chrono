@@ -1,21 +1,6 @@
-.c-player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
 .c-slide_display {
-  display: flex;
-  margin: 0 auto;
   border-radius: 30px;
-  height: 770px;
-  width: 100%;
   background: linear-gradient(125deg, #380F64, #360037);
-  overflow: hidden;
-
-  align-items: center;
 }
 
 .c-timer_title{
@@ -23,23 +8,4 @@
   font-size: calc(64/16*1rem);
   color: #FEA298;
   text-shadow: 5px 5px #701543 ;
-}
-
-
-
-.c-player__image {
-  align-items: center;
-  margin: 0 auto;
-}
-
-.c-player_image--vertical {
-  max-height: 100%;
-}
-
-.c-player_image--horizontal {
-  max-width: 100%;
-}
-
-.c-player_image--square {
-  max-height: 90%;
 }

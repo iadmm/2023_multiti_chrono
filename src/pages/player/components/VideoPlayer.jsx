@@ -3,8 +3,8 @@ import React from "react";
 
 const VideoPlayer = ({ slide, goToNextSlide, maxLength, loop = false }) => {
   function onProgress({ playedSeconds }) {
-    console.log(playedSeconds);
     if (playedSeconds > maxLength) {
+      console.log('too long');
       goToNextSlide();
     }
   }
@@ -18,6 +18,7 @@ const VideoPlayer = ({ slide, goToNextSlide, maxLength, loop = false }) => {
       onEnded={goToNextSlide}
       onProgress={onProgress}
       loop={loop}
+      muted={true}
     />
   );
 };

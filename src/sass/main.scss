@@ -1,28 +1,11 @@
-@import "mixins/_mixins-breakpoints.scss";
+.c-slide_display {
+  border-radius: 30px;
+  background: linear-gradient(125deg, #380F64, #360037);
+}
 
-@import "base/_base-margins.scss";
-@import "base/_base-html.scss";
-@import "base/_base-body.scss";
-@import "base/_base-root.scss";
-
-@import "objects/_objects-listbare.scss";
-@import "objects/_objects-fluidimage.scss";
-@import "objects/_objects-fluidvideo.scss";
-
-@import "components/_components-test.scss";
-@import "components/_components-pagesection.scss";
-@import "components/_components-martin.scss";
-
-//components player
-@import "components/_components-player.scss"; 
-
-//components admin
-@import "components/_components-admin.scss";
-@import "components/_components-waiting-list.scss";
-
-@import "layout/_layout-container.scss";
-@import "layout/_layout-grid.scss";
-
-
-
-
+.c-timer_title{
+  font-family: "Comic Sans MS";
+  font-size: calc(64/16*1rem);
+  color: #FEA298;
+  text-shadow: 5px 5px #701543 ;
+}

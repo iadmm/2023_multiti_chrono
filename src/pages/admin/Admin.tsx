@@ -20,7 +20,7 @@ const Admin = () => {
 
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="bg-white py-8 px-6 rounded-xl text-slate-800">
+      <div className="bg-white py-8 px-6 rounded-xl text-slate-800 shadow-2xl shadow-slate-800">
         <h1 className="text-3xl mb-6">Please select a playlist</h1>
         <ul className="flex flex-col gap-4">
           {data.map((playlist) => (

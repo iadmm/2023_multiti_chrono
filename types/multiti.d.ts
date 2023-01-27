@@ -6,9 +6,11 @@ declare module Multiti {
     title: string;
     type: string;
     value: string;
+    image: { url: string };
   }
   export interface Playlist extends MongoDocument {
     name: string;
     slides: Slide[];
+    currentlyPlaying: Slide;
   }
 }
