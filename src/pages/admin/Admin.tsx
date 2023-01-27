@@ -1,5 +1,4 @@
 import React from "react";
-import "../../sass/admin.css";
 import { useQuery, useQueryClient } from "react-query";
 import { deletePlaylist, getPlaylists } from "../../lib/queries";
 import Playlist = Multiti.Playlist;
