@@ -11,19 +11,16 @@ const bypass = false;
 const FinalCountdown = ({ startTime, endTime }) => {
   const [lastHour, setLastHour] = useState(new Date().getHours());
   useEffect(() => {
-    setInterval(callback, 5000);
+    setInterval(callback, 1000);
 
     function callback() {
       const nowHour = new Date().getHours();
-      // console.log(nowHour, lastHour)
-      // if(lastHour < nowHour){
-
       if (nowHour < lastHour || bypass) {
         let value = `Il reste ${differenceInHours(endTime, startTime)} heure`;
         const speakUp = new SpeechSynthesisUtterance(value);
         speakUp.voice = voice;
-        speakUp.pitch = 10;
-        speakUp.rate = 0.1;
+        speakUp.pitch = 4;
+        speakUp.rate = 0.02;
 
         synth.speak(speakUp);
         setLastHour(nowHour);
