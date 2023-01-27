@@ -54,9 +54,6 @@ const Playlist = () => {
             <button onClick={goToNextSlide}>Play next slide</button>
           </div>
           <div className="px-4">
-            <PitchForm  />
-          </div>
-          <div className="px-4">
             <SlideForm playlist={playlist} />
           </div>
         </div>
