@@ -2,15 +2,13 @@ import React from "react";
 import {
   createBrowserRouter,
   Outlet,
-  redirect,
   RouterProvider,
-  useRouteLoaderData,
 } from "react-router-dom";
 import Home from "./src/pages/home/Home";
-import Login from "./src/pages/login/Login";
-import User from "./src/pages/user/User";
-import Player from "./src/pages/player/Player"
 import ErrorPage from "./src/pages/error/ErrorPage";
+import Admin from "./src/pages/admin/Admin";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const Root = () => {
   return (
@@ -25,24 +23,26 @@ const Root = () => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
     errorElement: <ErrorPage />,
-    id: "root",
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "player",
-        element: <Player />,
-      },
-    ],
-  }
+    element: <Home />,
+  },
+
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
+  {},
 ]);
 
+const queryClient = new QueryClient();
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
