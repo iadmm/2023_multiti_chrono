@@ -6,8 +6,11 @@ import { useQuery, useQueryClient } from "react-query";
 import { deleteSlide, getPlaylist } from "../../lib/queries";
 import Playlist = Multiti.Playlist;
 
-const usePlaylist = () => {
-  const { playlistId } = useParams();
+interface usePlaylistProps {
+  playlistId?: string;
+}
+
+const usePlaylist = ({ playlistId }: usePlaylistProps) => {
   const { isLoading, data: playlist } = useQuery<Playlist>(
     ["playlists", playlistId],
     () => getPlaylist(playlistId!)
@@ -45,7 +48,7 @@ const usePlaylist = () => {
   }
 
   async function onSlideDelete(slideId: Slide) {
-    playlistId && await deleteSlide(playlistId, slideId._id);
+    playlistId && (await deleteSlide(playlistId, slideId._id));
     queryClient.invalidateQueries(["playlists", playlistId]);
   }
   return {

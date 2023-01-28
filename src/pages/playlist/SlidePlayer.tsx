@@ -1,9 +1,11 @@
 import React from "react";
 import usePlaylist from "./usePlaylist";
 import Player from "../player/Player";
+import {useParams} from "react-router";
 
 const SlidePlayer = () => {
-  const { playlist, goToNextSlide } = usePlaylist();
+  const { playlistId } = useParams();
+  const { playlist, goToNextSlide } = usePlaylist({playlistId});
   if (!playlist) {
     return null;
   }

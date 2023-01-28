@@ -1,17 +1,18 @@
 import React from "react";
-import {
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { SlideForm } from "../playlist/components/SlideForm";
+import usePlaylist from "../playlist/usePlaylist";
 
 const Home = () => {
-
+  const { playlist } = usePlaylist({ playlistId: "current" });
+  if (!playlist) {
+    return null;
+  }
   return (
-    <div>
-      <h1 className="u-margin-bottom-none">Multiti Jam</h1>
-      <h2>2023</h2>
-      <p>Creation de projets en 48h</p>
-      <Link to={"/player"}>Player</Link>
+    <div className="h-full w-full flex items-center justify-center multiti">
+      <div className="w-96">
+        <h1 className="mb-6 text-xl">Multiti Jam</h1>
+        <SlideForm playlist={playlist} />
+      </div>
     </div>
   );
 };

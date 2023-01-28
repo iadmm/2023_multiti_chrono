@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body,#root{
-    @apply bg-slate-900 text-white w-full h-full;
+html,
+body,
+#root {
+  @apply bg-slate-900 text-white w-full h-full;
+}
+
+.c-slide_display {
+  border-radius: 30px;
+  background: linear-gradient(125deg, #380f64, #360037);
+}
+
+.c-timer_title {
+  font-family: "Comic Sans MS";
+  font-size: calc(64 / 16 * 1rem);
+  color: #fea298;
+  text-shadow: 5px 5px #701543;
+}
+
+.multiti {
+  font-family: "Comic Sans MS";
+}
+.multiti h1 {
+  font-size: calc(64 / 16 * 1rem);
+  color: #fea298;
+  text-shadow: 5px 5px #701543;
+  @apply mb-8;
+}
+
+.multiti button {
+
 }
