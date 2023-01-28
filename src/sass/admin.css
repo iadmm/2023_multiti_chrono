@@ -6,6 +6,7 @@ html,
 body,
 #root {
   @apply bg-slate-900 text-white w-full h-full;
+  background-image: url("/sparkles.gif");
 }
 
 .c-slide_display {
