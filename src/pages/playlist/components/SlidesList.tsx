@@ -6,10 +6,12 @@ export function SlidesList({
   playlist,
   onSlideClick,
   onSlideDelete,
+  updateMutedSlide,
 }: {
   playlist: Playlist;
   onSlideClick: (slide: SlideDoc) => void;
   onSlideDelete: (slide: SlideDoc) => void;
+  updateMutedSlide: any;
 }) {
   return (
     <ul>
@@ -19,6 +21,7 @@ export function SlidesList({
             slide={slide}
             onSlideClick={onSlideClick}
             onSlideDelete={onSlideDelete}
+            updateSlide={updateMutedSlide}
           />
         </li>
       ))}

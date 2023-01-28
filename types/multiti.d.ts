@@ -4,6 +4,7 @@ declare module Multiti {
   }
   export interface Slide extends MongoDocument {
     title: string;
+    muted: boolean;
     type: string;
     value: string;
     image: { url: string };

@@ -6,16 +6,22 @@ import { SlideForm } from "./components/SlideForm";
 import { Slide } from "./components/Slide";
 import Player from "../player/Player";
 import usePlaylist from "./usePlaylist";
-import PitchForm from "./components/PitchForm";
 import { useParams } from "react-router";
 
 const Playlist = () => {
   const { playlistId } = useParams();
-  const { isLoading, playlist, onSlideClick, goToNextSlide, onSlideDelete } =
-    usePlaylist({ playlistId });
+  const {
+    isLoading,
+    playlist,
+    onSlideClick,
+    goToNextSlide,
+    onSlideDelete,
+    updateMutedSlide,
+  } = usePlaylist({ playlistId });
   if (isLoading || !playlist) {
     return <div>Loading</div>;
   }
+
   //
   return (
     <div className="flex h-full">
@@ -49,6 +55,7 @@ const Playlist = () => {
                 onSlideClick={onSlideClick}
                 onSlideDelete={onSlideDelete}
                 slide={playlist.currentlyPlaying}
+                updateSlide={updateMutedSlide}
               />
             )}
             {!playlist.currentlyPlaying && (
@@ -69,6 +76,7 @@ const Playlist = () => {
               onSlideClick={onSlideClick}
               playlist={playlist}
               onSlideDelete={onSlideDelete}
+              updateMutedSlide={updateMutedSlide}
             />
           )}
           {playlist.slides && !playlist.slides.length && (

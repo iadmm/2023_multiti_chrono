@@ -3,7 +3,7 @@ import Slide = Multiti.Slide;
 import { Socket } from "../../lib/socket";
 import { useParams } from "react-router";
 import { useQuery, useQueryClient } from "react-query";
-import { deleteSlide, getPlaylist } from "../../lib/queries";
+import { deleteSlide, getPlaylist, updateSlide } from "../../lib/queries";
 import Playlist = Multiti.Playlist;
 
 interface usePlaylistProps {
@@ -41,7 +41,11 @@ const usePlaylist = ({ playlistId }: usePlaylistProps) => {
     };
   }, []);
   //
-
+  async function updateMutedSlide(slide: Slide, payload: any) {
+    console.log("update", slide, payload);
+    await updateSlide(slide._id, payload);
+    queryClient.invalidateQueries(["playlists", playlistId]);
+  }
   function goToNextSlide() {
     console.log("go to next slide");
     socket.emit("play_next_slide", { playlistId });
@@ -55,6 +59,7 @@ const usePlaylist = ({ playlistId }: usePlaylistProps) => {
     onSlideClick,
     isLoading,
     playlist,
+    updateMutedSlide,
     goToNextSlide,
     onSlideDelete,
   };

@@ -26,6 +26,11 @@ export const deleteSlide = async (playlistId: string, slideId: string) => {
   return data;
 };
 
+export const updateSlide = async (slideId: string, payload:any) => {
+  const { data } = await instance.put<any>(`/slides/${slideId}`, payload);
+  return data;
+};
+
 interface SlidePartial {
   value: string;
 }

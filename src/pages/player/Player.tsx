@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SlideDisplay from "./components/SlideDisplay.jsx";
-import FinalCountdown from "./components/FinalCoutdown.jsx";
+import FinalCountdown from "./components/FinalCoutdown.js";
 import Countdown from "react-countdown";
 import Renderer from "./components/Renderer.jsx";
 import Slide = Multiti.Slide;
